@@ -327,42 +327,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 
+    <!-- JAVASCRIPT CODE -->
+    <!-- ============================================================================ -->
     <script>
-        $(document).ready(function() {
-            var friends = [
-                {
-                    name: 'Tiger Woods',
-                    photo: 'https://usatgolfweek.files.wordpress.com/2018/08/tiger-woods-pga-championship-highlights-sunday-e1534705656333.jpg?w=1000&h=600&crop=1',
-                    scores: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1]
-                },
-                {
-                    name: 'Phil Mickelson',
-                    photo: 'https://thenypost.files.wordpress.com/2018/08/mickelson.jpg?quality=90&strip=all&w=618&h=410&crop=1',
-                    scores: [1, 5, 2, 2, 1, 5, 4, 1, 2, 5]
-                },
-                {
-                    name: 'Rory McIlroy',
-                    photo: 'https://www.irishnews.com/picturesarchive/irishnews/irishnews/2018/03/18/223714156-136b340b-33f0-43cc-85c5-b74335ba92ef.jpg',
-                    scores: [3, 2, 3, 3, 5, 2, 1, 3, 5, 1]
-                },
-                {
-                    name: 'Vijay Singh',
-                    photo: 'https://media.golfdigest.com/photos/5929dcd251acd351a964161b/master/pass/Vijay-Singh-Senior-PGA.jpg',
-                    scores: [4, 2, 1, 4, 4, 5, 2, 1, 1, 4]
-                },
-                {
-                    name: 'Ernie Els',
-                    photo: 'https://usatgolfweek.files.wordpress.com/2017/06/ernie-els-u-s-open-thursday1.jpg?w=1000&h=600&crop=1',
-                    scores: [5, 5, 5, 3, 4, 1, 1, 1, 5, 4]
-                }
-            ];
+        $(document).ready(function () {
             var userScores = [];
-            console.log('Tiger: ' + friends[0].scores);
-            console.log('Phil: ' + friends[1].scores);
-            console.log('Rory: ' + friends[2].scores);
-            console.log('Vijay: ' + friends[3].scores);
-            console.log('Ernie: ' + friends[4].scores);
-
             // Dropdown functions
             // =================================================================
             $('.question-1').click(function () {
@@ -435,184 +404,8 @@
                 console.log(userScores);
                 $('#q10').text(this.innerHTML);
             });
-
-            // Compare scores between each question and calculate difference value
-            // =================================================================
-            // var arrOne = [5, 1, 4, 4, 5, 1, 2, 5, 4, 1];
-            // var arrTwo = [3, 2, 6, 4, 5, 1, 2, 5, 4, 1];
-            var resultsArr = [];
-
-            var tigerArr = [];
-            var tigerPosArr = [];
-            var tigerSum = 0
-
-            var philArr = [];
-            var philPosArr = [];
-            var philSum = 0
-
-            var roryArr = [];
-            var roryPosArr = [];
-            var rorySum = 0
-
-            var vijayArr = [];
-            var vijayPosArr = [];
-            var vijaySum = 0
-
-            var ernieArr = [];
-            var erniePosArr = [];
-            var ernieSum = 0
-
-            // Testing            
-            // =================================================================
-            // for (var i = 0; i <= 9; i++) {
-            //     // console.log(arrOne[i]);
-            //     // console.log(arrTwo[i]);
-            //     if (arrOne[i] !== arrTwo[i]) {
-            //         diffArr.push(arrOne[i] - arrTwo[i]);
-            //     }
-            // }
-
-            // console.log(diffArr);
-
-            // for (var i = 0; i < diffArr.length; i++) {
-            //     var pos = Math.abs(diffArr[i]);
-            //     // console.log(pos);
-            //     posArr.push(pos);
-            // }
-            // console.log(posArr);
-
-            // for (var i = 0; i < posArr.length; i++) {
-            //     sum += posArr[i];
-            // }
-            // console.log('Total difference: ' + sum);
-
-            // // Compare to scores in data
-            // for (var i = 0; i < friends.length; i++) {
-            //     console.log(friends[i].name);
-            //     console.log(friends[i].scores);
-
-            // }
-
-            // Modal
-            // =================================================================
+            // Submit button on click event
             $('#submit').on('click', function () {
-                // Tiger
-                // =================================================================
-                for (var i = 0; i <= 9; i++) {
-                    // console.log(arrOne[i]);
-                    // console.log(arrTwo[i]);
-                    if (userScores[i] !== (friends[0].scores[i])) {
-                        tigerArr.push(userScores[i] - (friends[0].scores[i]));
-                    }
-                }
-                console.log(tigerArr);
-                for (var i = 0; i < tigerArr.length; i++) {
-                    var tigerPos = Math.abs(tigerArr[i]);
-                    // console.log(pos);
-                    tigerPosArr.push(tigerPos);
-                }
-                console.log(tigerPosArr);
-                for (var i = 0; i < tigerPosArr.length; i++) {
-                    tigerSum += tigerPosArr[i];
-                }
-                console.log('Tiger difference: ' + tigerSum);
-                resultsArr.push(tigerSum);
-                // Phil
-                // =================================================================
-                for (var i = 0; i <= 9; i++) {
-                    // console.log(arrOne[i]);
-                    // console.log(arrTwo[i]);
-                    if (userScores[i] !== (friends[1].scores[i])) {
-                        philArr.push(userScores[i] - (friends[1].scores[i]));
-                    }
-                }
-                console.log(philArr);
-                for (var i = 0; i < philArr.length; i++) {
-                    var philPos = Math.abs(philArr[i]);
-                    // console.log(philPos);
-                    philPosArr.push(philPos);
-                }
-                console.log(philPosArr);
-                for (var i = 0; i < philPosArr.length; i++) {
-                    philSum += philPosArr[i];
-                }
-                console.log('Phil difference: ' + philSum);
-                resultsArr.push(philSum);
-                // Rory
-                // =================================================================
-                for (var i = 0; i <= 9; i++) {
-                    // console.log(arrOne[i]);
-                    // console.log(arrTwo[i]);
-                    if (userScores[i] !== (friends[2].scores[i])) {
-                        roryArr.push(userScores[i] - (friends[2].scores[i]));
-                    }
-                }
-                console.log(roryArr);
-                for (var i = 0; i < roryArr.length; i++) {
-                    var roryPos = Math.abs(roryArr[i]);
-                    // console.log(pos);
-                    roryPosArr.push(roryPos);
-                }
-                console.log(roryPosArr);
-                for (var i = 0; i < roryPosArr.length; i++) {
-                    rorySum += roryPosArr[i];
-                }
-                console.log('Rory difference: ' + rorySum);
-                resultsArr.push(rorySum);
-                // Vijay
-                // =================================================================
-                for (var i = 0; i <= 9; i++) {
-                    // console.log(arrOne[i]);
-                    // console.log(arrTwo[i]);
-                    if (userScores[i] !== (friends[3].scores[i])) {
-                        vijayArr.push(userScores[i] - (friends[3].scores[i]));
-                    }
-                }
-                console.log(vijayArr);
-                for (var i = 0; i < vijayArr.length; i++) {
-                    var vijayPos = Math.abs(vijayArr[i]);
-                    // console.log(pos);
-                    vijayPosArr.push(vijayPos);
-                }
-                console.log(vijayPosArr);
-                for (var i = 0; i < vijayPosArr.length; i++) {
-                    vijaySum += vijayPosArr[i];
-                }
-                console.log('Vijay difference: ' + vijaySum);
-                resultsArr.push(vijaySum);
-                // Ernie
-                // =================================================================
-                for (var i = 0; i <= 9; i++) {
-                    // console.log(arrOne[i]);
-                    // console.log(arrTwo[i]);
-                    if (userScores[i] !== (friends[4].scores[i])) {
-                        ernieArr.push(userScores[i] - (friends[4].scores[i]));
-                    }
-                }
-                console.log(ernieArr);
-                for (var i = 0; i < ernieArr.length; i++) {
-                    var erniePos = Math.abs(ernieArr[i]);
-                    // console.log(pos);
-                    erniePosArr.push(erniePos);
-                }
-                console.log(erniePosArr);
-                for (var i = 0; i < erniePosArr.length; i++) {
-                    ernieSum += erniePosArr[i];
-                }
-                console.log('Ernie difference: ' + ernieSum);
-                resultsArr.push(ernieSum);
-
-                // =================================================================
-                // Find index of lowest number
-                // This will correspond with index in friends array
-                console.log(resultsArr);
-                var idx = resultsArr.indexOf(Math.min.apply(null, resultsArr));
-                console.log(idx);
-
-                // Build modal with matching golfer
-                $('#match-name').html('<h1>' + friends[idx].name + '</h1>');
-                $('#match-image').html('<img style="height:200px;width:300px" src=' + '"' + friends[idx].photo + '"/>');
-
                 // Build user object
                 // =================================================================
                 var userObj = {
@@ -621,6 +414,157 @@
                     scores: userScores
                 }
                 console.log(userObj);
+                // Get correct match data logic
+                $.get('api/friends', function (data) {
+                    var resultsArr = [];
+
+                    var tigerArr = [];
+                    var tigerPosArr = [];
+                    var tigerSum = 0;
+
+                    var philArr = [];
+                    var philPosArr = [];
+                    var philSum = 0;
+
+                    var roryArr = [];
+                    var roryPosArr = [];
+                    var rorySum = 0;
+
+                    var vijayArr = [];
+                    var vijayPosArr = [];
+                    var vijaySum = 0;
+
+                    var ernieArr = [];
+                    var erniePosArr = [];
+                    var ernieSum = 0;
+
+                    // Tiger
+                    // =================================================================
+                    for (var i = 0; i <= 9; i++) {
+                        if (userScores[i] !== data[0].scores[i]) {
+                            tigerArr.push(userScores[i] - data[0].scores[i]);
+                        }
+                    }
+                    console.log(tigerArr);
+                    for (var i = 0; i < tigerArr.length; i++) {
+                        var tigerPos = Math.abs(tigerArr[i]);
+                        tigerPosArr.push(tigerPos);
+                    }
+                    console.log(tigerPosArr);
+                    for (var i = 0; i < tigerPosArr.length; i++) {
+                        tigerSum += tigerPosArr[i];
+                    }
+                    console.log("Tiger difference: " + tigerSum);
+                    resultsArr.push(tigerSum);
+                    // Phil
+                    // =================================================================
+                    for (var i = 0; i <= 9; i++) {
+                        if (userScores[i] !== data[1].scores[i]) {
+                            philArr.push(userScores[i] - data[1].scores[i]);
+                        }
+                    }
+                    console.log(philArr);
+                    for (var i = 0; i < philArr.length; i++) {
+                        var philPos = Math.abs(philArr[i]);
+                        philPosArr.push(philPos);
+                    }
+                    console.log(philPosArr);
+                    for (var i = 0; i < philPosArr.length; i++) {
+                        philSum += philPosArr[i];
+                    }
+                    console.log("Phil difference: " + philSum);
+                    resultsArr.push(philSum);
+                    // Rory
+                    // =================================================================
+                    for (var i = 0; i <= 9; i++) {
+                        if (userScores[i] !== data[2].scores[i]) {
+                            roryArr.push(userScores[i] - data[2].scores[i]);
+                        }
+                    }
+                    console.log(roryArr);
+                    for (var i = 0; i < roryArr.length; i++) {
+                        var roryPos = Math.abs(roryArr[i]);
+                        roryPosArr.push(roryPos);
+                    }
+                    console.log(roryPosArr);
+                    for (var i = 0; i < roryPosArr.length; i++) {
+                        rorySum += roryPosArr[i];
+                    }
+                    console.log("Rory difference: " + rorySum);
+                    resultsArr.push(rorySum);
+                    // Vijay
+                    // =================================================================
+                    for (var i = 0; i <= 9; i++) {
+                        if (userScores[i] !== data[3].scores[i]) {
+                            vijayArr.push(userScores[i] - data[3].scores[i]);
+                        }
+                    }
+                    console.log(vijayArr);
+                    for (var i = 0; i < vijayArr.length; i++) {
+                        var vijayPos = Math.abs(vijayArr[i]);
+                        vijayPosArr.push(vijayPos);
+                    }
+                    console.log(vijayPosArr);
+                    for (var i = 0; i < vijayPosArr.length; i++) {
+                        vijaySum += vijayPosArr[i];
+                    }
+                    console.log("Vijay difference: " + vijaySum);
+                    resultsArr.push(vijaySum);
+                    // Ernie
+                    // =================================================================
+                    for (var i = 0; i <= 9; i++) {
+                        if (userScores[i] !== data[4].scores[i]) {
+                            ernieArr.push(userScores[i] - data[4].scores[i]);
+                        }
+                    }
+                    console.log(ernieArr);
+                    for (var i = 0; i < ernieArr.length; i++) {
+                        var erniePos = Math.abs(ernieArr[i]);
+                        erniePosArr.push(erniePos);
+                    }
+                    console.log(erniePosArr);
+                    for (var i = 0; i < erniePosArr.length; i++) {
+                        ernieSum += erniePosArr[i];
+                    }
+                    console.log("Ernie difference: " + ernieSum);
+                    resultsArr.push(ernieSum);
+                    // =================================================================
+                    // Find index of lowest number
+                    // This will correspond with index in results array
+                    console.log(resultsArr);
+                    var idx = resultsArr.indexOf(Math.min.apply(null, resultsArr));
+                    console.log(idx);
+                    console.log(data);
+                    if (data) {
+                        $('#match-name').html('<h1>' + data[idx].name + '</h1>');
+                        $('#match-image').html('<img style="height:200px;width:300px" src=' + '"' + data[idx].photo + '"/>');
+                        console.log('You are matched!');
+                    }
+                })
+                // AJAX post data to friends API 
+                // =================================================================
+                $.post("/api/friends", userObj,
+                    function (data) {
+                        if (data) {
+                            console.log('You are matched!');
+                        }
+                        else {
+                            console.log('Sorry, you did not match with anyone!');
+                        }
+                        
+                    });
+                    $('#name').val('');
+                    $('#photo').val('')
+                    $('#q1').text('Select an Option');
+                    $('#q2').text('Select an Option');
+                    $('#q3').text('Select an Option');
+                    $('#q4').text('Select an Option');
+                    $('#q5').text('Select an Option');
+                    $('#q6').text('Select an Option');
+                    $('#q7').text('Select an Option');
+                    $('#q8').text('Select an Option');
+                    $('#q9').text('Select an Option');
+                    $('#q10').text('Select an Option');
             })
         })
     </script>
