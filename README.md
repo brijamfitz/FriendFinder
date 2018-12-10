@@ -1,6 +1,6 @@
 # FriendFinder
 
-Experience here: [FriendFinder](https://safe-mesa-64790.herokuapp.com/)
+Experience here: [FriendFinder](https://gentle-temple-26190.herokuapp.com/)
 
 FriendFinder is a full-stack application, modeled on current dating apps.
 
@@ -15,7 +15,7 @@ This application uses Get and Post routing, as well as module-based architecture
 * Express
 * Path
 
-This application has been deployed to Heroku and can be found here: [FriendFinder](https://safe-mesa-64790.herokuapp.com/) 
+This application has been deployed to Heroku and can be found here: [FriendFinder](https://gentle-temple-26190.herokuapp.com/) 
 
 ### Current Limitations:
 * This app is still in a fragile, non-scalable state
