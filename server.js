@@ -5,11 +5,14 @@ var express = require('express');
 // Set up Express App
 // =================================================================
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 9000;
 
 // Set up Express middleware to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
 
 // ROUTER
 // =================================================================
